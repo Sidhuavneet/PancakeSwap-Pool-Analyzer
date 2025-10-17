@@ -4,7 +4,7 @@ const OpenAI = require('openai');
 const cors = require('cors');
 require('dotenv').config();
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 7000;
 
 // Enable CORS for all routes
 app.use(cors());
