@@ -17,7 +17,9 @@ function App() {
 
     setLoading(true);
     try {
-      const response = await fetch(`http://localhost:7000/fetch-pool?address=${tokenAddress}`);
+      // Use environment variable for API URL, fallback to localhost
+      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:7000';
+      const response = await fetch(`${apiUrl}/fetch-pool?address=${tokenAddress}`);
       const data = await response.json();
       
       console.log('Pool data received:', data);
